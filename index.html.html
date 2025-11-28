@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MIKE — The Quirky Street Sneaker</title>
+  <style>
+    :root{
+      --green:#1f8a2e;
+      --bg:#0f0f10;
+      --card:#111217;
+      --accent:#ffd166;
+      --muted:#bfc2c6;
+      --glass: rgba(255,255,255,0.06);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#0b0b0c 0%, #121216 100%);color:#fff}
+    .wrap{min-height:100vh;display:grid;place-items:center;padding:40px}
+    .ad{
+      width:100%;max-width:980px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:18px;padding:28px;box-shadow:0 10px 40px rgba(2,6,23,0.6);display:flex;gap:28px;align-items:center;
+    }
+    .image-wrap{flex:1;display:flex;align-items:center;justify-content:center;position:relative}
+    .image-wrap img{max-width:100%;height:auto;border-radius:12px;filter:contrast(1.05) saturate(0.95) sepia(0.05) grayscale(0.02);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
+
+    /* Big MIKE branding stamp */
+    .stamp{
+      position:absolute;right:18px;bottom:18px;background:var(--glass);backdrop-filter:blur(6px);
+      padding:10px 18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;gap:12px
+    }
+    .stamp .word{font-weight:800;font-size:44px;letter-spacing:2px;color:var(--green);font-family: Impact, Haettenschweiler, 'Arial Black', sans-serif}
+    .stamp .mini{font-size:12px;color:var(--muted);text-transform:uppercase}
+
+    .copy{flex:1.1;padding:6px 6px}
+    .kicker{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(31,138,46,0.08);color:var(--green);font-weight:700;font-size:12px}
+    h1{margin:10px 0 6px;font-size:34px;line-height:1.02}
+    p.lead{color:var(--muted);margin:10px 0 20px;font-size:16px}
+
+    .features{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+    .feature{background:rgba(255,255,255,0.02);padding:10px 12px;border-radius:10px;font-weight:600;font-size:13px}
+
+    .cta{display:flex;gap:12px;align-items:center}
+    .btn{
+      background:linear-gradient(90deg,var(--green), #7bd37b);padding:12px 18px;border-radius:12px;border:none;font-weight:800;cursor:pointer;box-shadow:0 8px 20px rgba(31,138,46,0.18);
+    }
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;font-weight:700;color:var(--muted)}
+
+    .tagline{margin-top:18px;font-size:14px;color:var(--accent);font-weight:800}
+
+    /* playful confetti accent */
+    .confetti{position:absolute;left:12px;top:12px;pointer-events:none}
+    .confetti span{position:absolute;width:6px;height:6px;border-radius:2px;background:var(--accent);transform:rotate(25deg);opacity:0.95}
+
+    @media (max-width:820px){
+      .ad{flex-direction:column}
+      .stamp .word{font-size:34px}
+      h1{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="ad" role="region" aria-label="Advertisement for Mike sneaker">
+      <div class="image-wrap">
+        <!-- Using the uploaded image file from your container -->
+        <img src="https://i.pinimg.com/736x/1e/d0/38/1ed0383a47529ca8b628de1a4a6a28dc.jpg" alt="Mike sneaker - big green MIKE branding"/>
+
+        <div class="stamp" aria-hidden="true">
+          <div class="word">MIKE</div>
+          <div class="mini">since forever</div>
+        </div>
+
+        <div class="confetti" aria-hidden="true">
+          <span style="left:6px;top:2px;transform:rotate(12deg);background:#ffd166"></span>
+          <span style="left:34px;top:18px;transform:rotate(-24deg);width:8px;height:4px;background:#f06c9b;border-radius:3px"></span>
+          <span style="left:80px;top:6px;transform:rotate(40deg);background:#6ee7b7"></span>
+        </div>
+      </div>
+
+      <div class="copy">
+        <div class="kicker">Street-style</div>
+        <h1>Make 'em laugh. Make 'em stare. Wear <span style="color:var(--green)">MIKE</span>.</h1>
+        <p class="lead">Bold, vintage, and beautifully offbeat — the MIKE sneaker blends playful design with everyday comfort. With a giant green logo, swoosh-inspired flair, and a retro sole, MIKE is the shoe for people who love standing out (in the best way).</p>
+
+        <div class="features">
+          <div class="feature">Retro worn-in vibes</div>
+          <div class="feature">Playful oversized branding</div>
+          <div class="feature">Lightweight all-day wear</div>
+        </div>
+
+        <div class="cta">
+          <button class="btn" onclick="alert('Please wait...')">Buy</button>
+          <button class="btn secondary" onclick="document.location='#learn'">See the Story</button>
+        </div>
+
+        <div class="tagline">“Not just a shoe — it's a personality.”</div>
+      </div>
+    </div>
+
+    <!-- mock targets for buttons -->
+    <div id="buy" style="height:20px"></div>
+    <div id="learn" style="height:20px"></div>
+  </div>
+</body>
+</html>
